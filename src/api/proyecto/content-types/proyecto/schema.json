@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyectos",
+  "info": {
+    "singularName": "proyecto",
+    "pluralName": "proyectos",
+    "displayName": "Proyecto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": true
+    },
+    "tecnologias": {
+      "type": "json",
+      "required": true
+    },
+    "imagen_principal": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "enlace_demo": {
+      "type": "string",
+      "required": false,
+      "regex": "^https?:\\/\\/.+"
+    },
+    "enlace_github": {
+      "type": "string",
+      "regex": "^https?:\\/\\/.+"
+    },
+    "categoria": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Frontend",
+        "Backend",
+        "Fullstack",
+        "Mobile",
+        "Desktop"
+      ]
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false
+    },
+    "ano_creacion": {
+      "type": "integer",
+      "required": true,
+      "default": 2024
+    }
+  }
+}
